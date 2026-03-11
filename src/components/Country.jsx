@@ -2,15 +2,28 @@ import React from "react";
 import Medal from "./Medal";
 
 function Country(props) {
+  const { country, medals, handleIncrement, handleDecrement, onDelete } = props;
+
+  const totalCountryMedals =
+    country.gold + country.silver + country.bronze;
+
   return (
     <div className="country-card">
-      <h2 className="country-title">{props.name}</h2>
+      <h2 className="country-title">{country.name}</h2>
 
-      {props.medals.map((medal) => (
-        <Medal key={medal.id} name={medal.name} />
+      {medals.map((medal) => (
+        <Medal
+          key={medal.id}
+          country={country}
+          medal={medal}
+          handleIncrement={handleIncrement}
+          handleDecrement={handleDecrement}
+        />
       ))}
 
-      <button onClick={() => props.onDelete(props.id)}>Delete</button>
+      <p className="country-total">Total Medals: {totalCountryMedals}</p>
+
+      <button onClick={() => onDelete(country.id)}>Delete</button>
     </div>
   );
 }
