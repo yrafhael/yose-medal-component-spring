@@ -1,0 +1,48 @@
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.app-container {
+  text-align: center;
+}
+
+.countries-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  margin-top: 20px;
+}
+
+.country-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+  width: 220px;
+  background-color: #fff;
+  color: #213547;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.country-title {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.country-medals {
+  color: chocolate;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background-color: #25df34;
+  cursor: pointer;
+}
